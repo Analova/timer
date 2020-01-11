@@ -3,6 +3,7 @@ class Timer {
     this.durationInput = durationInput;
     this.startButton = startButton;
     this.pauseButton = pauseButton;
+
     this.startButton.addEventListener("click", this.start);
     this.pauseButton.addEventListener("click", this.pause);
   }
@@ -17,7 +18,8 @@ class Timer {
   };
 
   tick = () => {
-    console.log("tick");
+    const timeRemaining = parseFloat(this.durationInput.value);
+    this.durationInput.value = timeRemaining - 1;
   };
 }
 
